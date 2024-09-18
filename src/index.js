@@ -1,22 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// import App from './App';
+// import reportWebVitals from './reportWebVitals';
 import ListItem from './list/Listitem';
+import Header from './components/Header';
+import Footer from './components/Footer';
 
 const root = 
 ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <div className='app'>
-<div className='app-header'>
-  <span className='header-title'>Demo Coding</span>
-  <span>Home</span>
-  <span>Usage</span>
-  <span>Settings</span>
-  <span>Logout</span>
-
-</div>
+  <Header/>
 <div className='app-body'>
   <span className='app-list'>
 
@@ -28,10 +23,7 @@ root.render(
   
   </span>
 </div>
-<div className='app-footer'>
-  Copyright@DemoCodeing | All Rights Reserved
-</div>
-
+<Footer/>
 </div>
 );
 
