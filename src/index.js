@@ -12,7 +12,7 @@ ReactDOM.createRoot(document.getElementById('root'));
 root.render(
 <div className='app'>
   <Header/>
-<div className='app-body'>
+<div className='app-body' >
   <List/>
 </div>
 <Footer/>

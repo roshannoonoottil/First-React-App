@@ -2,22 +2,27 @@
 import React from 'react';
 import Label from './Label';
 
-function ListItem(){
+function ListItem(probs){
     return(
       <span className='list-item'>
-      <hr/>
         <div className='list-title'>
-          <h4>Title One</h4>
+
+          <h4>{probs.title}</h4>
+
         </div>
         <div className='list-discr'>
-          This is the first description
+
+          {probs.desc}
+
         </div>
         <div className='list-label'>
-          <Label/>
-          <Label/>
-          <Label/>
+        <br/>
+          <Label onAction={()=>{
+            console.log('parent clicked');
+            
+          }} isActive={probs.isActive}/>
+
         </div>
-      <hr/>
     </span>
     );
   }

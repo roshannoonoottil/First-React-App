@@ -13,7 +13,9 @@ import './Label.css' //css file import
 
 class Label extends React.Component{
     render(){
-        return <span className='list-label-item'>Label 2 </span>;
+        const props = this.props;
+        const style = props.isActive ? {background:'green'} : {background:'orange'}
+        return <span onClick={props.onAction} className='list-label-item' style={style}>{props.isActive ? 'Active' : 'Not Active'} </span>;
     }
 }
 
