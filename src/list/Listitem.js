@@ -7,7 +7,8 @@ function ListItem(props) {
     title,
     desc,
     isActive,
-    onDelete
+    onDelete,
+    onLabelClick
   } = props;
   return (
     <span className="list-item">
@@ -18,11 +19,7 @@ function ListItem(props) {
       <div className="list-discr">{desc}</div>
       <div className="list-label">
         <br />
-        <Label
-          onAction={() => {
-            console.log("parent clicked");
-          }}
-          isActive={isActive}
+        <Label isActive={isActive} onAction={onLabelClick}
         />
       </div>
     </span>

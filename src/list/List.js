@@ -1,6 +1,7 @@
 import React from "react";
 import ListItem from "./Listitem";
 import Tools from "../components/Tools";
+import SimpleList from "./SimpleList";
 
 let arr = [
   {
@@ -66,9 +67,16 @@ class List extends React.Component {
     console.log('Delete', item);
     const newList = this.state.data.filter((element) => element.id !== item.id);
     this.setState({
-        data:newList
+        data:newList    
     });
     
+  }
+
+  handleLabelClick = (arg) =>{
+    this.setState({
+        activeState: arg
+    })
+
   }
 
   // if we are using normal function we need to use bind(this) for arrow function no needed
@@ -88,23 +96,8 @@ class List extends React.Component {
     });
 
     return (
-      <Tools onAction={this.onListChange}>
-        <div className="app-list">
-          {newList.map((obj) => {
-            return (
-              <ListItem
-                key={obj.title}
-                onAction={this.myAction}
-                title={obj.title}
-                desc={obj.desc}
-                isActive={obj.isActive}
-                onDelete={()=>{
-                    this.handleDelete(obj);
-                }}
-              />
-            );
-          })}
-        </div>
+      <Tools LabelValue={activeState} onAction={this.onListChange}>
+        <SimpleList onLabelClick={this.handleLabelClick} data={newList} onAction={this.handleDelete} />
       </Tools>
     );
   }

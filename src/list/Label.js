@@ -16,7 +16,9 @@ class Label extends React.Component {
       ? { background: "green" }
       : { background: "orange" };
     return (
-      <span onClick={props.onAction} className="list-label-item" style={style}>
+      <span onClick={()=>{
+        props.onAction(props.isActive ? "active" : "not-active");
+      }} className="list-label-item" style={style}>
         {props.isActive ? "Active" : "Not Active"}{" "}
       </span>
     );
