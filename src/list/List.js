@@ -30,7 +30,7 @@ class List extends React.Component {
         };
     }
 
-    onListChange(evt){
+    onListChange = (evt)=>{
         console.log(evt.target.value);
         const value = evt.target.value
         const newList = arr.filter((item)=>{
@@ -59,7 +59,7 @@ class List extends React.Component {
 
     render(){
         return(
-            <Tools onAction={this.onListChange.bind(this)}>
+            <Tools onAction={this.onListChange}> */ if we are using normal function we need to use bind(this) for arrow function no needed*/
                 <div className='app-list'>
                     {
                         this.state.data.map((obj) =>{
