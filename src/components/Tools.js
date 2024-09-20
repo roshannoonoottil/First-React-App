@@ -3,12 +3,17 @@ import React from "react";
 class Tools extends React.Component{
     render(){
         const {
-            children
+            children,
+            onAction
         } = this.props;
+        
+        const onlyChild = React.Children.only(children);
+        const count = React.Children.count(onlyChild.props.children);
+        
         return (
             <div>
                 <div className="list-header">
-                    <select name="status">
+                    <select onChange={onAction} name="status">
                         <option value="all">All</option>
                         <option value="active">Active</option>
                         <option value="not-active">Not Active</option>
@@ -17,7 +22,7 @@ class Tools extends React.Component{
                 </div>
                 {children}
                 <div className="list-footer">
-                    some info here
+                    Total {count} Items. 
                 </div>
             </div>
         )
