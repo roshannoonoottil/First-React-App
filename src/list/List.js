@@ -57,9 +57,10 @@ class List extends React.Component {
         
     }
 
+    // if we are using normal function we need to use bind(this) for arrow function no needed
     render(){
         return(
-            <Tools onAction={this.onListChange}> */ if we are using normal function we need to use bind(this) for arrow function no needed*/
+            <Tools onAction={this.onListChange}> 
                 <div className='app-list'>
                     {
                         this.state.data.map((obj) =>{
